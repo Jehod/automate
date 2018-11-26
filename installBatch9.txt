@@ -1,0 +1,21 @@
+Mantis 99879 BATCH 9: rajout langues AU_AU
+------------------------------------------------
+
+1. Prérequis
+- Dernières versions de Clin'form 2.8 et ePro 1.6.5
+	
+- Batch 1 et 2 installés
+
+- Profil Data Manager et Support doivent être créés
+
+2. Contraintes
+
+- Temps d'installation moyen : <5min
+
+3. Sauvegarde avant installation
+
+4. Editer setupBatch9.ini en se basant sur les commentaires
+
+5. LANCER UNE CONSOLE CMD EN MODE ADMINISTRATEUR, SE PLACER DANS LE REPERTOIRE CONTENANT LE FICHIER setupBatch9.bat et lancer setupBatch9.bat en ligne de commandes (~5 minutes)
+  
+6. Vérifier qu'il n'y a pas d'erreur dans le log. En cas d'échec, corriger l'erreur et relancer le setupBatch9.bat

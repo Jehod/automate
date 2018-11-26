@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<params>
+	<langRef ref="EN_US" />
+	<pathLabel path="Label/"/>
+	
+	<MapMethod method="FDEF.1_QLQC30" formulaire="QLQ_C30"/>
+	<MapMethod method="FDEF.2_QLQLC13" formulaire="QLQ_LC13"/>
+	<MapMethod method="FDEF.3_EQ5D5L" formulaire="EQ5D"/>
+	<MapMethod method="FDEF.TRAIN" formulaire="TRAIN"/>
+	<MapMethod method="FDEF.1_QLQC30_UNSCH" formulaire="QLQ_C30"/>
+	<MapMethod method="FDEF.2_QLQLC13_UNSCH" formulaire="QLQ_C13"/>	
+	<MapMethod method="FDEF.3_EQ5D5L_UNSCH" formulaire="EQ5D"/>
+
+</params>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<params>
+	<langRef ref="EN_US" />
+	<pathLabel path="Label/"/>
+	
+	<MapMethod method="FDEF.TRAIN" formulaire="TRAIN"/>
+
+</params>
