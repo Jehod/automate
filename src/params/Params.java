@@ -33,11 +33,11 @@ public class Params
         {
             createDocParams();
         }
-        pathLabel = "Labels/";
-        pathXmlLabel = "";
-        langRef = "EN_US";
+        pathLabel = XmlTools.getValueFromDoc(docParams, "pathLabel");
+        pathXmlLabel = XmlTools.getValueFromDoc(docParams, "pathXml");
+        langRef = XmlTools.getValueFromDoc(docParams, "langRef");
         docRef = XmlTools.convertFileToDoc(pathLabel + "Label_" + langRef + ".xml");
-        XmlTools.changeValueOnAttribute(docRef, langRef, "ref", "EN_UK");
+        XmlTools.changeValueOnAttribute(docParams, "langRef", "EN_UK");
 
         //matchMethod = XmlTools.docToMapMethod(docParams);
     }
@@ -61,17 +61,17 @@ public class Params
     {
         String init = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
                 + "<params>\n"
-                + "	<langRef ref=\"EN_US\" />\n"
-                + "	<pathLabel path=\"Label/\"/>\n"
-                + "	\n"
-                + "	<MapMethod method=\"FDEF.TRAIN\" formulaire=\"TRAIN\"/>\n"
+                + "	<langRef langRef=\"EN_US\" />\n"
+                + "	<pathLabel pathLabel=\"Label/\"/>\n"
+                + "	<pathXml pathXml=\"\"/>\n"
+                + "	<MapMethod method=\"noMethod\" formulaire=\"noForm\"/>\n"
                 + "\n"
                 + "</params>";
 
         if (Outils.FilesWorker.editFiles(init, new File("automate_settings.xml")))
         {
             docParams = XmlTools.convertFileToDoc(pathParams);
-        };
+        }else{System.out.println("un probleme mec");};
 
     }
 

@@ -96,7 +96,7 @@ public class MethodMatcher
      */
     public void mapMethodMatcher()
     {
-        ArrayList li = XmlTools.listMappedMethod("method");
+        ArrayList li = XmlTools.listMappedMethod(Params.docParams,"method");
         for (String method : listMethod)
         {
             if (!ToolsString.searchInList(li, method))

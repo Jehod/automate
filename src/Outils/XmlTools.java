@@ -41,7 +41,7 @@ public class XmlTools
      */
     public static Document convertFileToDoc(String file)
     {
-        Document doc;
+        Document doc = null;
 
         try
         {
@@ -51,29 +51,34 @@ public class XmlTools
         } catch (DocumentException ex)
         {
             System.out.println("+++++++++catch du convertfiletodoc " + ex.getMessage());
-            doc = null;
+            
 
-        }
-        if (doc != null)
+        } finally
         {
-            System.out.println("reussite de la conversion de : " + file);
+
+            if (doc != null)
+            {
+                System.out.println("reussite de la conversion de : " + file);
+            }
         }
         return doc;
     }
 
     /**
-     * renvoie une liste des valeurs d'un attribut donné ( 1 niveau sous le root)
+     * renvoie une liste des valeurs d'un attribut donné ( 1 niveau sous le
+     * root)
+     *
      * @param attribut attribut a cibler
      * @return arraylist des valeurs de l'attribut
      */
-    public static ArrayList<String> listMappedMethod(String attribut)
+    public static ArrayList<String> listMappedMethod(Document docu, String attribut)
     {
         ArrayList list = new ArrayList();
-       
-        Element root = docParams.getRootElement();
-       // Element elem = el.  getElement("MapMethod");
-        List<Element> liste= root.elements();
-        
+
+        Element root = docu.getRootElement();
+        // Element elem = el.  getElement("MapMethod");
+        List<Element> liste = root.elements();
+
         for (Element el : liste)
         {
             if (el.attributeValue(attribut) != null)
@@ -81,8 +86,8 @@ public class XmlTools
                 list.add(el.attributeValue(attribut));
             }
         }
-        
-        System.out.println("liste de la ref:"+list.toString());
+
+        System.out.println("liste de la ref:" + list.toString());
         return list;
 
     }
@@ -141,7 +146,7 @@ public class XmlTools
     {
         ArrayList<DocLang> list = new ArrayList<>();
         String nodeType = "";
-        String regVersion = ".*..*";
+        String regVersion = ".....";
         if (doc != null)
         {
             int j = 0;
@@ -165,7 +170,6 @@ public class XmlTools
 
                     String version = split1[1];
                     String codeIso = split1[0].substring(split1[0].length() - 5, split1[0].length()).trim();
-                    
 
                     String quest = split1[0].substring(0, split1[0].length() - 6);
 
@@ -230,34 +234,39 @@ public class XmlTools
 
     }
 
-    public static boolean changeValueOnAttribute(Document doc, String element, String attribut, String newValue)
+    /**
+     * 
+     * @param doc
+     * @param element
+     * @param attribut
+     * @param newValue
+     * @return 
+     */
+    public static boolean changeValueOnAttribute(Document doc, String attribut, String newValue)
     {
+        String value =null;
         if (doc != null)
         {
-
-            Element root = doc.getRootElement();
-            Iterator elementIterator = root.elementIterator("params");
-
-            while (elementIterator.hasNext())
-            {
-                Element elemente = (Element) elementIterator.next();
-                System.out.println("element: " + elemente.toString());
-            }
-            // {
-
-            // 
-            //System.out.println("trace methodmatch++" + element.attributeValue("method"));
-            /* if (elemente.getName()).equals(element))
-                {
-                    elemente.attributeValue(attribut) = newValue;
-                }*/
-            //  }
-        } else
+          Element root = doc.getRootElement();
+        // Element elem = el.  getElement("MapMethod");
+        List<Element> liste = root.elements();
+            
+        for (Element el : liste)
         {
-            //formulaire = "doc manquant";
+            if (el.attributeValue(attribut) != null)
+            {
+                value = el.attributeValue(attribut);
+                
+                el.setAttributeValue(attribut, newValue);
+            }
         }
 
-        return false;
+        System.out.println("changement de "+attribut+" valeur "+value+" en " + newValue +" dans le Doc "+doc.getName());  
+        writerFile(doc, doc.getName());
+
+        }
+
+        return (value != null && value != newValue );
     }
 
     /**
@@ -359,5 +368,33 @@ public class XmlTools
         {
             System.out.println("++++writeXMLIndented++++" + e.getMessage());
         }
+    }
+
+    /**
+     * recupere la value d'un attribut du premiere niveau d'un xml
+     *
+     * @param docu
+     * @param balise
+     * @param attribut
+     * @return
+     */
+    public static String getValueFromDoc(Document docu, String attribut)
+    {
+        String value = "notFound";
+        Element root = docu.getRootElement();
+        // Element elem = el.  getElement("MapMethod");
+        List<Element> liste = root.elements();
+
+        for (Element el : liste)
+        {
+            if (el.attributeValue(attribut) != null)
+            {
+                value = el.attributeValue(attribut);
+            }
+        }
+
+        System.out.println("liste de la ref "+attribut+": " + value);
+        return value;
+
     }
 }
