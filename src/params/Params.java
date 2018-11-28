@@ -18,7 +18,8 @@ public class Params
 {
 
     private final String pathParams = "automate_settings.xml";
-
+    
+    public static String pathXmlLabel;
     public static String pathLabel;
     public static String langRef;
     public static Document docRef;
@@ -32,7 +33,8 @@ public class Params
         {
             createDocParams();
         }
-        pathLabel = "Label/";
+        pathLabel = "Labels/";
+        pathXmlLabel = "";
         langRef = "EN_US";
         docRef = XmlTools.convertFileToDoc(pathLabel + "Label_" + langRef + ".xml");
         XmlTools.changeValueOnAttribute(docRef, langRef, "ref", "EN_UK");
