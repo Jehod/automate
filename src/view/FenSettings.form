@@ -70,13 +70,15 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                          <Component id="langRef" max="32767" attributes="0"/>
+                          <Component id="langRefLabel" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="labepathlabel" min="-2" pref="185" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="pathlabelLab" max="32767" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="labepathlabel" min="-2" pref="185" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <Component id="formquery" min="-2" pref="153" max="-2" attributes="0"/>
@@ -91,12 +93,13 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="lablangueref" max="32767" attributes="0"/>
-                      <Component id="langRef" max="32767" attributes="0"/>
+                      <Component id="langRefLabel" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labepathlabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="labelpathlabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pathlabelLab" alignment="3" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="formquery" min="-2" max="-2" attributes="0"/>
@@ -118,13 +121,13 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="langRef">
+        <Component class="javax.swing.JLabel" name="langRefLabel">
           <Properties>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="Params.getLangRef()" type="code"/>
+            </Property>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="langRef.setText(Params.getLangRef());"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="labepathlabel">
         </Component>
@@ -155,6 +158,17 @@
             <Property name="text" type="java.lang.String" value="&quot;eProScreenBuilder.exe -output \u005c&quot;Screenshots\u005c\u005c&quot; + langue + &quot;\u005c&quot; -mode2 -workflow \u005c&quot;&quot; + fDEF + &quot;:PRO\u005c&quot; \u005c&quot;&quot; + fDEF + &quot;:&quot; + langue + &quot;(&quot; + version + &quot;)\u005c&quot;&quot; + &quot;\u005cn&quot;" containsInvalidXMLChars="true"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JLabel" name="pathlabelLab">
+          <Properties>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="Params.getPathLabel()" type="code"/>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="langRefLabel.setText(Params.getLangRef());"/>
+          </AuxValues>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel1">
@@ -181,7 +195,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jScrollPane1" alignment="0" pref="118" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" alignment="0" pref="116" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
