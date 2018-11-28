@@ -164,7 +164,8 @@ public class XmlTools
                     String[] split1 = str.split("£");
 
                     String version = split1[1];
-                    String codeIso = split1[0].substring(split1[0].length() - 5, split1[0].length());
+                    String codeIso = split1[0].substring(split1[0].length() - 5, split1[0].length()).trim();
+                    
 
                     String quest = split1[0].substring(0, split1[0].length() - 6);
 
