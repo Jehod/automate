@@ -5,11 +5,6 @@
  */
 package entity;
 
-import Outils.XmlTools;
-import java.util.ArrayList;
-import org.dom4j.Document;
-import static params.Params.pathLabel;
-
 /**
  *
  * @author nik
