@@ -11,6 +11,8 @@ import modele.ListModelFDEF;
 import modele.ListModelLangEnt;
 import modele.ListModelLangExt;
 import modele.ListModelMethExt;
+import params.ColorChart;
+import static params.ColorChart.fontCorps;
 
 /**
  *
@@ -100,7 +102,7 @@ public class Fenetre extends FrameGenerik {
         jLabel1.setToolTipText("sous forme (FDEF.3_EQ5D5L)");
 
         listLangEnSP.setBackground(params.ColorChart.colorFront);
-        listLangEnSP.setBorder(javax.swing.BorderFactory.createTitledBorder("Codes in Study"));
+        listLangEnSP.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Codes in Study", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, params.ColorChart.fontCorps));
         listLangEnSP.setAutoscrolls(true);
         listLangEnSP.setDoubleBuffered(true);
         listLangEnSP.setHorizontalScrollBar(null);
@@ -114,7 +116,7 @@ public class Fenetre extends FrameGenerik {
         listLangEnSP.setViewportView(listLangEntJL);
 
         listLangExSP.setBackground(params.ColorChart.colorFront);
-        listLangExSP.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Codes to ScreenShot", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 9))); // NOI18N
+        listLangExSP.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Codes to ScreenShot", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, ColorChart.fontCorpsReduit));
 
         listLangExtJL.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         listLangExtJL.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
@@ -141,7 +143,7 @@ public class Fenetre extends FrameGenerik {
         });
 
         listMethEn.setBackground(params.ColorChart.colorFront);
-        listMethEn.setBorder(javax.swing.BorderFactory.createTitledBorder("Method in Study"));
+        listMethEn.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Method in Study", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, params.ColorChart.fontCorps));
 
         listModelFDEF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         listModelFDEF.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
@@ -149,7 +151,7 @@ public class Fenetre extends FrameGenerik {
         listMethEn.setViewportView(listModelFDEF);
 
         listMethEx.setBackground(params.ColorChart.colorFront);
-        listMethEx.setBorder(javax.swing.BorderFactory.createTitledBorder("Method to screenshot"));
+        listMethEx.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Method to screenshot", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, params.ColorChart.fontCorpsReduit));
 
         listMethExt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         listMethExt.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N

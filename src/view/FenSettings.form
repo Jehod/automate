@@ -43,8 +43,8 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="labTitre">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="18" style="0"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="params.ColorChart.titre1" type="code"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Settings"/>
@@ -52,10 +52,16 @@
     </Component>
     <Container class="javax.swing.JPanel" name="pan1">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="params.ColorChart.colorFront" type="code"/>
+        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
             <BevelBorder/>
           </Border>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="params.ColorChart.fontCorps" type="code"/>
         </Property>
       </Properties>
 
@@ -73,15 +79,10 @@
                           <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           <Component id="langRefLabel" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="pathlabelLab" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Component id="labmetada" min="-2" pref="125" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
+                      <Component id="pathlabelLab" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="labmetada" min="-2" pref="125" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -90,11 +91,11 @@
               <Component id="jLabel1" alignment="1" pref="813" max="32767" attributes="0"/>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="formquery" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
                       <Component id="jLabel2" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
                       <Component id="labMeta" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
+                      <Component id="formquery" alignment="0" min="-2" pref="248" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="565" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -122,7 +123,7 @@
                   <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                   <Component id="formquery" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel1" pref="28" max="32767" attributes="0"/>
+                  <Component id="jLabel1" pref="32" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -130,8 +131,8 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="lablangueref">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="12" style="1"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="params.ColorChart.titre3" type="code"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="text" type="java.lang.String" value="Langue de ref: "/>
@@ -140,6 +141,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="langRefLabel">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="params.ColorChart.fontButton" type="code"/>
+            </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="Params.getLangRef()" type="code"/>
             </Property>
@@ -150,8 +154,8 @@
         </Component>
         <Component class="javax.swing.JLabel" name="labelpathlabel">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="12" style="1"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="params.ColorChart.titre3" type="code"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="text" type="java.lang.String" value="Path des labels:"/>
@@ -160,8 +164,8 @@
         </Component>
         <Component class="javax.swing.JLabel" name="formquery">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="12" style="1"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="params.ColorChart.titre3" type="code"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Forme de la commande:"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
@@ -177,6 +181,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="pathlabelLab">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="params.ColorChart.fontButton" type="code"/>
+            </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="Params.getPathLabel()" type="code"/>
             </Property>
@@ -188,8 +195,8 @@
         </Component>
         <Component class="javax.swing.JLabel" name="labMeta">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="12" style="1"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="params.ColorChart.titre3" type="code"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="text" type="java.lang.String" value="Path Metadata:"/>
@@ -198,6 +205,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="labmetada">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="params.ColorChart.fontButton" type="code"/>
+            </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="Params.getPathMeta()" type="code"/>
             </Property>
@@ -212,12 +222,16 @@
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="params.ColorChart.colorFront" type="code"/>
+        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
             <TitledBorder title="Mapping entre FormDef et formulaire">
               <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
               </Border>
+              <Connection PropertyName="font" code="params.ColorChart.titre3" type="code"/>
             </TitledBorder>
           </Border>
         </Property>
