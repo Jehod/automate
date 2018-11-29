@@ -18,10 +18,9 @@ public class Params
 {
 
     private final String pathParams = "automate_settings.xml";
-
+    
     public static String pathXmlLabel;
     public static String pathLabel;
-    public static String pathMeta;
     public static String langRef;
     public static Document docRef;
     //public static HashMap matchMethod;
@@ -37,7 +36,6 @@ public class Params
         pathLabel = XmlTools.getValueFromDoc(docParams, "pathLabel");
         pathXmlLabel = XmlTools.getValueFromDoc(docParams, "pathXml");
         langRef = XmlTools.getValueFromDoc(docParams, "langRef");
-        pathMeta = XmlTools.getValueFromDoc(docParams, "pathMeta");
         docRef = XmlTools.convertFileToDoc(pathLabel + "Label_" + langRef + ".xml");
         XmlTools.changeValueOnAttribute(docParams, "langRef", "EN_UK");
 
@@ -66,20 +64,14 @@ public class Params
                 + "	<langRef langRef=\"EN_US\" />\n"
                 + "	<pathLabel pathLabel=\"Label/\"/>\n"
                 + "	<pathXml pathXml=\"\"/>\n"
-                + "     <pathMeta pathMeta=\"Metadata/\"/>\n"
                 + "	<MapMethod method=\"noMethod\" formulaire=\"noForm\"/>\n"
                 + "\n"
                 + "</params>";
 
         if (Outils.FilesWorker.editFiles(init, new File("automate_settings.xml")))
         {
-            System.out.println("Creation du fichier de Params reussi");
             docParams = XmlTools.convertFileToDoc(pathParams);
-
-        } else
-        {
-            System.out.println("Creation du fichier de Params raté");
-        };
+        }else{System.out.println("un probleme mec");};
 
     }
 
