@@ -22,12 +22,15 @@ public class ColorChart {
     public static Font titre3;
     public static Font titre2;
      public static Font fontCorps;
+     public static Font fontButton;
 
     private ColorChart() {
         colorBack = new Color(0,156,180);
-        colorFont = new Color(251,187,0);
-        colorFront = new Color(76,79,83);
-        titre1 = new Font("TAHOMA",Font.BOLD, 13);
+        colorFront = new Color(251,187,0);
+        colorFont = new Color(76,79,83);
+        titre3 = new Font("TAHOMA",Font.BOLD, 13);
+        fontCorps = new Font("TAHOMA",Font.PLAIN,12);
+        fontButton = fontCorps.deriveFont(13);
     }
 
    

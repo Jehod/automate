@@ -29,11 +29,8 @@ public class Params
 
     private Params()
     {
-        docParams = XmlTools.convertFileToDoc(pathParams);
-        if (docParams == null)
-        {
-            createDocParams();
-        }
+        init();
+       
         pathLabel = XmlTools.getValueFromDoc(docParams, "pathLabel");
         pathXmlLabel = XmlTools.getValueFromDoc(docParams, "pathXml");
         langRef = XmlTools.getValueFromDoc(docParams, "langRef");
@@ -82,6 +79,18 @@ public class Params
             System.out.println("Creation du fichier de Params raté");
         };
 
+    }
+
+    /**
+     * initialiser le doc de params et instancie la charte graphique
+     */
+    private void init() {
+        docParams = XmlTools.convertFileToDoc(pathParams);
+        if (docParams == null)
+        {
+            createDocParams();
+        }
+        ColorChart.getInstance();
     }
 
     private static class ParamsHolder
