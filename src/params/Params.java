@@ -65,7 +65,7 @@ public class Params
         String init = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
                 + "<params>\n"
                 + "	<langRef langRef=\"EN_US\" />\n"
-                + "	<pathLabel pathLabel=\"Label/\"/>\n"
+                + "	<pathLabel pathLabel=\"Labels/\"/>\n"
                 + "	<pathXml pathXml=\"\"/>\n"
                 + "     <pathMeta pathMeta=\"Metadata/\"/>\n"
                 + "	<MapMethod method=\"noMethod\" formulaire=\"noForm\"/>\n"
