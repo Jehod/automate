@@ -5,6 +5,9 @@
  */
 package view;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 /**
  *
  * @author nrochas
@@ -14,8 +17,13 @@ public class FrameGenerik extends javax.swing.JFrame {
     /**
      * Creates new form FrameGenerik
      */
+   
     public FrameGenerik() {
+        
+         
+    //this.setLocation(dim.width/2 - this.getWidth()/2, dim.height/2 - this.getHeight()/2);
         initComponents();
+        
     }
 
     /**
@@ -25,9 +33,12 @@ public class FrameGenerik extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 255, 255));
+        setLocation(new java.awt.Point(0, 0));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -50,7 +61,9 @@ public class FrameGenerik extends javax.swing.JFrame {
       
      
             public void run() {
-                new FrameGenerik().setVisible(true);
+                 FrameGenerik f = new FrameGenerik();
+                          f.setLocationRelativeTo(f.getParent());
+                         f.setVisible(true);
             }
         
     

@@ -3,6 +3,7 @@
 	<langRef langRef="EN_UK"/>
 	<pathLabel pathLabel="Label/"/>
 	<pathXml pathXml=""/>
+      <pathMeta pathMeta="Metadata/"/>
 	<MapMethod method="noMethod" formulaire="noForm"/>
 
 </params>
