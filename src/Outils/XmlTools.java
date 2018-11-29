@@ -98,14 +98,17 @@ public class XmlTools
      * @param method
      * @param form
      */
-    public static void addToParams(String method, String form)
+    public static void addToParams(Document doc, String method, String form)
     {
 
-        Element el = docParams.getRootElement();
+        Element el = doc.getRootElement();
         Element elem = el.addElement("MapMethod");
         elem.addAttribute("method", method);
         elem.addAttribute("formulaire", form);
-        System.out.println("element is " + elem);
+        System.out.println("element is " + elem.toString() + "le fichier est: "+doc.getName());
+        writerFile(doc, doc.getName());
+        
+        
     }
 
     /**
