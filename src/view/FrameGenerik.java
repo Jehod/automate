@@ -49,10 +49,7 @@ public class FrameGenerik extends javax.swing.JFrame {
    
       
      
-            public void run() {
-                new FrameGenerik().setVisible(true);
-            }
-        
+           
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
