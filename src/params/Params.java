@@ -23,21 +23,21 @@ public class Params
     public static String pathLabel;
     public static String langRef;
     public static Document docRef;
+    public static String pathMeta;
     //public static HashMap matchMethod;
     public static Document docParams;
 
     private Params()
     {
-        docParams = XmlTools.convertFileToDoc(pathParams);
-        if (docParams == null)
-        {
-            createDocParams();
-        }
+        init();
+       
         pathLabel = XmlTools.getValueFromDoc(docParams, "pathLabel");
         pathXmlLabel = XmlTools.getValueFromDoc(docParams, "pathXml");
         langRef = XmlTools.getValueFromDoc(docParams, "langRef");
+        pathMeta = XmlTools.getValueFromDoc(docParams, "pathMeta");
         docRef = XmlTools.convertFileToDoc(pathLabel + "Label_" + langRef + ".xml");
-        XmlTools.changeValueOnAttribute(docParams, "langRef", "EN_UK");
+       // XmlTools.changeValueOnAttribute(docParams, "langRef", "EN_US");
+       //XmlTools.addToParams(docParams, "testMethod", "testForm");
 
         //matchMethod = XmlTools.docToMapMethod(docParams);
     }
@@ -62,7 +62,7 @@ public class Params
         String init = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
                 + "<params>\n"
                 + "	<langRef langRef=\"EN_US\" />\n"
-                + "	<pathLabel pathLabel=\"Label/\"/>\n"
+                + "	<pathLabel pathLabel=\"Labels/\"/>\n"
                 + "	<pathXml pathXml=\"\"/>\n"
                 + "	<MapMethod method=\"noMethod\" formulaire=\"noForm\"/>\n"
                 + "\n"
@@ -73,6 +73,18 @@ public class Params
             docParams = XmlTools.convertFileToDoc(pathParams);
         }else{System.out.println("un probleme mec");};
 
+    }
+
+    /**
+     * initialiser le doc de params et instancie la charte graphique
+     */
+    private void init() {
+        docParams = XmlTools.convertFileToDoc(pathParams);
+        if (docParams == null)
+        {
+            createDocParams();
+        }
+        ColorChart.getInstance();
     }
 
     private static class ParamsHolder
@@ -109,6 +121,22 @@ public class Params
     public static void setDocRef(Document docRef)
     {
         Params.docRef = docRef;
+    }
+
+    public static String getPathXmlLabel() {
+        return pathXmlLabel;
+    }
+
+    public static void setPathXmlLabel(String pathXmlLabel) {
+        Params.pathXmlLabel = pathXmlLabel;
+    }
+
+    public static String getPathMeta() {
+        return pathMeta;
+    }
+
+    public static void setPathMeta(String pathMeta) {
+        Params.pathMeta = pathMeta;
     }
 
 }

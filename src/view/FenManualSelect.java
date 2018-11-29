@@ -12,12 +12,13 @@ import entity.Methode;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
+import params.Params;
 
 /**
  *
  * @author nrochas
  */
-public class FenManualSelect extends javax.swing.JFrame {
+public class FenManualSelect extends FrameGenerik {
 
     /**
      * Creates new form ManualSelect
@@ -127,7 +128,7 @@ public class FenManualSelect extends javax.swing.JFrame {
         String selection = listdeFDEF.getSelectedValue();
         if (selection!= null && !selection.trim().equals("")) {
             //ToolsString.setResultat(selection);
-            XmlTools.addToParams(cible, selection);
+            XmlTools.addToParams(Params.docParams, cible, selection);
         }
         else
         {

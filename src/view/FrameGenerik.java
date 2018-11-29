@@ -6,24 +6,27 @@
 package view;
 
 import java.awt.Dimension;
-import java.awt.Toolkit;
 
 /**
  *
  * @author nrochas
  */
-public class FrameGenerik extends javax.swing.JFrame {
+public class FrameGenerik extends javax.swing.JFrame
+{
 
     /**
      * Creates new form FrameGenerik
      */
-   
-    public FrameGenerik() {
-        
-         
-    //this.setLocation(dim.width/2 - this.getWidth()/2, dim.height/2 - this.getHeight()/2);
+    public FrameGenerik()
+    {
+
+        Dimension dim = this.getToolkit().getScreenSize();
+       
         initComponents();
-        
+        this.setLocation(dim.width/2 - this.getWidth()/2, dim.height/2 - this.getHeight()/2);
+        this.setSize(850, 400);
+        this.getContentPane().setBackground(params.ColorChart.colorBack);
+        this.setVisible(true);
     }
 
     /**
@@ -37,7 +40,6 @@ public class FrameGenerik extends javax.swing.JFrame {
     {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setBackground(new java.awt.Color(204, 255, 255));
         setLocation(new java.awt.Point(0, 0));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -54,20 +56,8 @@ public class FrameGenerik extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-   
-      
-     
-            public void run() {
-                 FrameGenerik f = new FrameGenerik();
-                          f.setLocationRelativeTo(f.getParent());
-                         f.setVisible(true);
-            }
-        
-    
+}
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
-}

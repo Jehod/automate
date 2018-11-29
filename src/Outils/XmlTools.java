@@ -6,9 +6,11 @@
 package Outils;
 
 import entity.DocLang;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -19,7 +21,6 @@ import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 import params.Params;
-import static params.Params.docParams;
 
 /**
  *
@@ -93,19 +94,23 @@ public class XmlTools
     }
 
     /**
-     * ajout une balise mapmethod
+     * ajout une balise mapmethod avec couple method-form
      *
-     * @param method
-     * @param form
+     * @param doc  document a traiter
+     * @param method   attribut method a traiter
+     * @param form   attribut form a traiter
      */
-    public static void addToParams(String method, String form)
+    public static void addToParams(Document doc, String method, String form)
     {
 
-        Element el = docParams.getRootElement();
+        Element el = doc.getRootElement();
         Element elem = el.addElement("MapMethod");
         elem.addAttribute("method", method);
         elem.addAttribute("formulaire", form);
-        System.out.println("element is " + elem);
+        System.out.println("element is " + elem.toString() + "le fichier est: "+doc.getName());
+        writerFile(doc, doc.getName());
+        
+        
     }
 
     /**
@@ -234,12 +239,11 @@ public class XmlTools
 
     }
 
-    /**
+    /**change la valeur d'un attribut qui se trouve dans une balise a 1 niveau  sous le root
      * 
-     * @param doc
-     * @param element
-     * @param attribut
-     * @param newValue
+     * @param doc  docuement a traiter
+     * @param attribut    attribut a rechercher
+     * @param newValue     nouvelle valeur a donner a l'attribut
      * @return 
      */
     public static boolean changeValueOnAttribute(Document doc, String attribut, String newValue)
@@ -338,6 +342,7 @@ public class XmlTools
         try
         {
             out = new FileWriter(file);
+            
             doc.write(out);
             out.close();
         } catch (IOException ex)
@@ -364,7 +369,7 @@ public class XmlTools
             XMLWriter writer = new XMLWriter(System.out, outformat);
             writer.write(doc);
             writer.flush();
-        } catch (Exception e)
+        } catch (IOException e)
         {
             System.out.println("++++writeXMLIndented++++" + e.getMessage());
         }
@@ -374,7 +379,6 @@ public class XmlTools
      * recupere la value d'un attribut du premiere niveau d'un xml
      *
      * @param docu
-     * @param balise
      * @param attribut
      * @return
      */

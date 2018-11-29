@@ -7,9 +7,6 @@ package view;
 
 import automate.EcrivainScreenShot;
 import automate.MethodMatcher;
-import java.awt.Color;
-import javax.swing.JOptionPane;
-import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import modele.ListModelFDEF;
 import modele.ListModelLangEnt;
 import modele.ListModelLangExt;
@@ -19,7 +16,7 @@ import modele.ListModelMethExt;
  *
  * @author nik
  */
-public class Fenetre extends javax.swing.JFrame {
+public class Fenetre extends FrameGenerik {
 
     EcrivainScreenShot ecr = new EcrivainScreenShot();
     MethodMatcher mm = new MethodMatcher();
@@ -32,6 +29,7 @@ public class Fenetre extends javax.swing.JFrame {
        
         
         initComponents();
+        
        
 
         }
@@ -43,15 +41,12 @@ public class Fenetre extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         butFin = new javax.swing.JButton();
         butCancel = new javax.swing.JButton();
         titreSaisi = new javax.swing.JLabel();
         titreSaisi1 = new javax.swing.JLabel();
-        titrePhrase = new javax.swing.JLabel();
-        txtPhrase = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         javax.swing.JScrollPane listLangEnSP = new javax.swing.JScrollPane();
         listLangEntJL = new javax.swing.JList<>();
@@ -66,25 +61,25 @@ public class Fenetre extends javax.swing.JFrame {
         butEnvoiMethod = new javax.swing.JButton();
         butRetraitMethod = new javax.swing.JButton();
         butScript = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Scripteur pour ScreenShots\n");
+        setBackground(new java.awt.Color(255, 102, 102));
+        setForeground(new java.awt.Color(51, 255, 255));
 
         butFin.setText("Ajuster");
         butFin.setToolTipText("permet de faire le mapping entre les FormDef et les formulaires");
-        butFin.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        butFin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butFinActionPerformed(evt);
             }
         });
 
         butCancel.setText("cancel");
         butCancel.setEnabled(false);
-        butCancel.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        butCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butCancelActionPerformed(evt);
             }
         });
@@ -95,23 +90,12 @@ public class Fenetre extends javax.swing.JFrame {
         titreSaisi1.setText("Saisie des methodes");
         titreSaisi1.setToolTipText("sous forme (FDEF.3_EQ5D5L)");
 
-        titrePhrase.setText("Version:");
-
-        txtPhrase.setToolTipText("sous forme (0.0.1)");
-        txtPhrase.setEnabled(false);
-        txtPhrase.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                txtPhraseActionPerformed(evt);
-            }
-        });
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Form Template: eProScreenBuilder.exe -output \"Screenshots\\AR_IL\" -mode2 -workflow \"FDEF.3_EQ5D5L:PRO\" \"FDEF.3_EQ5D5L:AR_IL(1.0.0)\"");
         jLabel1.setToolTipText("sous forme (FDEF.3_EQ5D5L)");
 
+        listLangEnSP.setBackground(params.ColorChart.colorFront);
         listLangEnSP.setBorder(javax.swing.BorderFactory.createTitledBorder("Codes in Study"));
         listLangEnSP.setAutoscrolls(true);
         listLangEnSP.setDoubleBuffered(true);
@@ -125,6 +109,7 @@ public class Fenetre extends javax.swing.JFrame {
         listLangEntJL.setDoubleBuffered(true);
         listLangEnSP.setViewportView(listLangEntJL);
 
+        listLangExSP.setBackground(params.ColorChart.colorFront);
         listLangExSP.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Codes to ScreenShot", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 9))); // NOI18N
 
         listLangExtJL.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -133,24 +118,21 @@ public class Fenetre extends javax.swing.JFrame {
         listLangExSP.setViewportView(listLangExtJL);
 
         butEnvoi.setText(">");
-        butEnvoi.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        butEnvoi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butEnvoiActionPerformed(evt);
             }
         });
 
         butRetrait.setText("<");
         butRetrait.setToolTipText("");
-        butRetrait.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        butRetrait.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butRetraitActionPerformed(evt);
             }
         });
 
+        listMethEn.setBackground(params.ColorChart.colorFront);
         listMethEn.setBorder(javax.swing.BorderFactory.createTitledBorder("Method in Study"));
 
         listModelFDEF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -158,6 +140,7 @@ public class Fenetre extends javax.swing.JFrame {
         listModelFDEF.setModel(new modele.ListModelFDEF());
         listMethEn.setViewportView(listModelFDEF);
 
+        listMethEx.setBackground(params.ColorChart.colorFront);
         listMethEx.setBorder(javax.swing.BorderFactory.createTitledBorder("Method to screenshot"));
 
         listMethExt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -166,33 +149,30 @@ public class Fenetre extends javax.swing.JFrame {
         listMethEx.setViewportView(listMethExt);
 
         butEnvoiMethod.setText(">");
-        butEnvoiMethod.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        butEnvoiMethod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butEnvoiMethodActionPerformed(evt);
             }
         });
 
         butRetraitMethod.setText("<");
         butRetraitMethod.setToolTipText("");
-        butRetraitMethod.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        butRetraitMethod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butRetraitMethodActionPerformed(evt);
             }
         });
 
         butScript.setText("Lancer le script");
         butScript.setToolTipText("Synchroniser d'abord les methodes pour activer ce bouton");
-        butScript.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        butScript.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butScriptActionPerformed(evt);
             }
         });
+
+        jLabel2.setText("Exemple de script généré:");
+        jLabel2.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -204,7 +184,19 @@ public class Fenetre extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(titreSaisi1)
                 .addGap(144, 144, 144))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(butCancel)
+                .addGap(241, 241, 241)
+                .addComponent(butFin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(butScript, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(89, 89, 89))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(listLangEnSP, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -223,25 +215,8 @@ public class Fenetre extends javax.swing.JFrame {
                 .addComponent(listMethEx, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(133, 133, 133)
-                        .addComponent(titrePhrase, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtPhrase, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(244, 244, 244))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(butCancel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(butFin)
-                        .addGap(162, 162, 162)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(butScript, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(89, 89, 89))
+                .addGap(90, 90, 90)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,13 +246,11 @@ public class Fenetre extends javax.swing.JFrame {
                             .addComponent(listMethEx, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                             .addComponent(listLangExSP, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                             .addComponent(listLangEnSP, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
-                .addGap(27, 27, 27)
+                .addGap(22, 22, 22)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(titrePhrase)
-                    .addComponent(txtPhrase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(butCancel)
                     .addComponent(butFin)
@@ -308,17 +281,6 @@ public class Fenetre extends javax.swing.JFrame {
        
 
     }//GEN-LAST:event_butFinActionPerformed
-
-    private void txtPhraseActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_txtPhraseActionPerformed
-    {//GEN-HEADEREND:event_txtPhraseActionPerformed
-        if (txtPhrase.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(this, "champs vides!", "error", ERROR_MESSAGE);
-        } else {
-            //mainGauche.setEnvoi(txtPhrase.getText().trim());
-            txtPhrase.setBackground(Color.YELLOW);
-
-        }
-    }//GEN-LAST:event_txtPhraseActionPerformed
 
     private void butEnvoiActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butEnvoiActionPerformed
     {//GEN-HEADEREND:event_butEnvoiActionPerformed
@@ -380,6 +342,7 @@ public class Fenetre extends javax.swing.JFrame {
     private javax.swing.JButton butRetraitMethod;
     private javax.swing.JButton butScript;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> listLangEntJL;
     private javax.swing.JScrollPane listLangExSP;
     private javax.swing.JList<String> listLangExtJL;
@@ -387,9 +350,7 @@ public class Fenetre extends javax.swing.JFrame {
     private javax.swing.JScrollPane listMethEx;
     private javax.swing.JList<String> listMethExt;
     private javax.swing.JList<String> listModelFDEF;
-    private javax.swing.JLabel titrePhrase;
     private javax.swing.JLabel titreSaisi;
     private javax.swing.JLabel titreSaisi1;
-    private javax.swing.JTextField txtPhrase;
     // End of variables declaration//GEN-END:variables
 }

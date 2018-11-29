@@ -5,11 +5,8 @@
  */
 package automate;
 
-import entity.DocLang;
 import entity.Methode;
 import entity.Pays;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -35,6 +32,7 @@ public class EcrivainScreenShot
     public String getScript()
     {
         String scr = "";
+     
 
         for (String langue : pay.getListExt())
         {
@@ -46,8 +44,8 @@ public class EcrivainScreenShot
                 String version = methMatch.GetVersionFromDoclang(langue, formulaire);
                 
                 //eProScreenBuilder.exe -output "Screenshots\AR_IL" -mode2 -workflow "FDEF.3_EQ5D5L:PRO" "FDEF.3_EQ5D5L:AR_IL(1.0.0)"
-                scr = scr + "eProScreenBuilder.exe -output \"Screenshots\\" + langue + "\" -mode2 -workflow \"" + fDEF + ":PRO\" \""
-                        + fDEF + ":" + langue + "(" + version + ")\"" + "\n";
+                
+                scr = scr + "eProScreenBuilder.exe -output \"Screenshots\\" + langue + "\" -mode2 -workflow \"" + fDEF + ":PRO\" \"" + fDEF + ":" + langue + "(" + version + ")\"" + "\n";
 
             }
             scr += "\n";

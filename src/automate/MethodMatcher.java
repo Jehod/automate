@@ -92,7 +92,7 @@ public class MethodMatcher
     }
 
     /**
-     * mapping manuel des methodes et de form
+     * mapping manuel des methodes et de form et svg dans le fichier de params
      */
     public void mapMethodMatcher()
     {
@@ -105,10 +105,10 @@ public class MethodMatcher
                 {
                     if (method.contains(form))
                     {
-                        XmlTools.addToParams(method, form);
+                        XmlTools.addToParams(Params.docParams,method, form);
                     } else
                     {
-                        
+                        System.out.println("n'a pas trouvé la method contenu : form:  " +form+ "method: "+method);                        
                        /* FenManualSelect fms = new FenManualSelect(listForm, method);
                         fms.setLocation(500, 200);
                         fms.setSize(1000, 400);

@@ -14,7 +14,7 @@ import static javax.swing.JOptionPane.ERROR_MESSAGE;
  *
  * @author nrochas
  */
-public class FenBatchLangue extends javax.swing.JFrame {
+public class FenBatchLangue extends FrameGenerik {
 
    
     

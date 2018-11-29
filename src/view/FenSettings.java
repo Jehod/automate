@@ -11,7 +11,7 @@ import params.Params;
  *
  * @author nik
  */
-public class FenSettings extends javax.swing.JFrame
+public class FenSettings extends FrameGenerik
 {
 
     /**
@@ -40,6 +40,9 @@ public class FenSettings extends javax.swing.JFrame
         formquery = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         pathlabelLab = new javax.swing.JLabel();
+        labMeta = new javax.swing.JLabel();
+        labmetada = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
@@ -53,7 +56,7 @@ public class FenSettings extends javax.swing.JFrame
         pan1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         lablangueref.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lablangueref.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lablangueref.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lablangueref.setText("Langue de ref: ");
         lablangueref.setToolTipText("");
 
@@ -61,7 +64,7 @@ public class FenSettings extends javax.swing.JFrame
         langRefLabel.setToolTipText("");
 
         labelpathlabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        labelpathlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelpathlabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         labelpathlabel.setText("Path des labels:");
         labelpathlabel.setToolTipText("");
 
@@ -76,27 +79,44 @@ public class FenSettings extends javax.swing.JFrame
         pathlabelLab.setText(Params.getPathLabel());
         pathlabelLab.setToolTipText("");
 
+        labMeta.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        labMeta.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        labMeta.setText("Path Metadata:");
+        labMeta.setToolTipText("");
+
+        labmetada.setText(Params.getPathMeta());
+
+        jLabel2.setText("jLabel2");
+
         javax.swing.GroupLayout pan1Layout = new javax.swing.GroupLayout(pan1);
         pan1.setLayout(pan1Layout);
         pan1Layout.setHorizontalGroup(
             pan1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pan1Layout.createSequentialGroup()
-                .addGroup(pan1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(labelpathlabel, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                .addGroup(pan1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelpathlabel, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
                     .addComponent(lablangueref, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(24, 24, 24)
                 .addGroup(pan1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pan1Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(langRefLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pan1Layout.createSequentialGroup()
+                    .addGroup(pan1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(pathlabelLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(pan1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pathlabelLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(pan1Layout.createSequentialGroup()
+                                .addComponent(labmetada, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labepathlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 813, Short.MAX_VALUE)
             .addGroup(pan1Layout.createSequentialGroup()
-                .addComponent(formquery, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pan1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(formquery, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labMeta, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 835, Short.MAX_VALUE)
         );
         pan1Layout.setVerticalGroup(
             pan1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,10 +131,15 @@ public class FenSettings extends javax.swing.JFrame
                     .addComponent(labelpathlabel)
                     .addComponent(pathlabelLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pan1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labMeta)
+                    .addComponent(labmetada))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(54, 54, 54)
                 .addComponent(formquery)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
         );
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Mapping entre FormDef et formulaire"));
@@ -132,7 +157,7 @@ public class FenSettings extends javax.swing.JFrame
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -148,9 +173,9 @@ public class FenSettings extends javax.swing.JFrame
             .addGroup(layout.createSequentialGroup()
                 .addComponent(labTitre, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(pan1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(pan1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -170,13 +195,16 @@ public class FenSettings extends javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel formquery;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JLabel labMeta;
     private javax.swing.JLabel labTitre;
     private javax.swing.JLabel labelpathlabel;
     private javax.swing.JLabel labepathlabel;
     private javax.swing.JLabel lablangueref;
+    private javax.swing.JLabel labmetada;
     private javax.swing.JLabel langRefLabel;
     private javax.swing.JPanel pan1;
     private javax.swing.JLabel pathlabelLab;
