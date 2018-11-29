@@ -23,6 +23,7 @@ public class ColorChart
     public static Font titre3;
     public static Font titre2;
     public static Font titre1;
+    public static Font fontCorpsReduit;
 
     private ColorChart()
     {
@@ -35,6 +36,7 @@ public class ColorChart
         fontButton = fontCorps.deriveFont(13);
         titre2 = fontCorps.deriveFont(Font.BOLD,15);
         titre1 = fontCorps.deriveFont(Font.BOLD,18);
+        fontCorpsReduit = fontCorps.deriveFont(7);
     }
 
     public static ColorChart getInstance()
