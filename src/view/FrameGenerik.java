@@ -21,11 +21,15 @@ public class FrameGenerik extends javax.swing.JFrame
     {
 
         Dimension dim = this.getToolkit().getScreenSize();
+        
        
         initComponents();
+        
+        this.setFont(params.ColorChart.fontCorps);
         this.setLocation(dim.width/2 - this.getWidth()/2, dim.height/2 - this.getHeight()/2);
         this.setSize(850, 400);
         this.getContentPane().setBackground(params.ColorChart.colorBack);
+        this.getContentPane().setForeground(params.ColorChart.colorFront);
         this.setVisible(true);
     }
 

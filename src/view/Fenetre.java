@@ -41,7 +41,8 @@ public class Fenetre extends FrameGenerik {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         butFin = new javax.swing.JButton();
         butCancel = new javax.swing.JButton();
@@ -65,21 +66,24 @@ public class Fenetre extends FrameGenerik {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Scripteur pour ScreenShots\n");
-        setBackground(new java.awt.Color(255, 102, 102));
-        setForeground(new java.awt.Color(51, 255, 255));
+        setFont(new java.awt.Font("Tekton Pro Ext", 0, 12)); // NOI18N
 
         butFin.setText("Ajuster");
         butFin.setToolTipText("permet de faire le mapping entre les FormDef et les formulaires");
-        butFin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        butFin.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 butFinActionPerformed(evt);
             }
         });
 
         butCancel.setText("cancel");
         butCancel.setEnabled(false);
-        butCancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        butCancel.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 butCancelActionPerformed(evt);
             }
         });
@@ -118,16 +122,20 @@ public class Fenetre extends FrameGenerik {
         listLangExSP.setViewportView(listLangExtJL);
 
         butEnvoi.setText(">");
-        butEnvoi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        butEnvoi.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 butEnvoiActionPerformed(evt);
             }
         });
 
         butRetrait.setText("<");
         butRetrait.setToolTipText("");
-        butRetrait.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        butRetrait.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 butRetraitActionPerformed(evt);
             }
         });
@@ -149,24 +157,30 @@ public class Fenetre extends FrameGenerik {
         listMethEx.setViewportView(listMethExt);
 
         butEnvoiMethod.setText(">");
-        butEnvoiMethod.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        butEnvoiMethod.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 butEnvoiMethodActionPerformed(evt);
             }
         });
 
         butRetraitMethod.setText("<");
         butRetraitMethod.setToolTipText("");
-        butRetraitMethod.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        butRetraitMethod.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 butRetraitMethodActionPerformed(evt);
             }
         });
 
         butScript.setText("Lancer le script");
         butScript.setToolTipText("Synchroniser d'abord les methodes pour activer ce bouton");
-        butScript.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        butScript.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 butScriptActionPerformed(evt);
             }
         });
