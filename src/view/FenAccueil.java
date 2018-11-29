@@ -18,7 +18,7 @@ public class FenAccueil extends FrameGenerik {
         {
         
         initComponents();
-        this.getContentPane().setBackground(params.ColorChart.colorBack);
+        
         }
 
     /**
@@ -28,7 +28,8 @@ public class FenAccueil extends FrameGenerik {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         labTitre = new javax.swing.JLabel();
         panelButton = new javax.swing.JPanel();
@@ -40,7 +41,7 @@ public class FenAccueil extends FrameGenerik {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Accueil");
 
-        labTitre.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        labTitre.setFont(params.ColorChart.titre1);
         labTitre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labTitre.setText("Automate d'Aide au Parametrage");
 
@@ -48,30 +49,38 @@ public class FenAccueil extends FrameGenerik {
 
         butBatchL.setText("Aide BatchLangue");
         butBatchL.setEnabled(false);
-        butBatchL.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        butBatchL.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 butBatchLActionPerformed(evt);
             }
         });
 
         butSettings.setText("Settings");
-        butSettings.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        butSettings.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 butSettingsActionPerformed(evt);
             }
         });
 
         butScreen.setText("Aide Screenshot");
-        butScreen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        butScreen.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 butScreenActionPerformed(evt);
             }
         });
 
         butModeEmploi.setText("Mode d'Emploi");
         butModeEmploi.setToolTipText("");
-        butModeEmploi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        butModeEmploi.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 butModeEmploiActionPerformed(evt);
             }
         });
@@ -80,12 +89,10 @@ public class FenAccueil extends FrameGenerik {
         panelButton.setLayout(panelButtonLayout);
         panelButtonLayout.setHorizontalGroup(
             panelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelButtonLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(butScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(butBatchL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(butSettings, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(butModeEmploi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(butScreen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelButtonLayout.setVerticalGroup(
             panelButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,19 +132,14 @@ public class FenAccueil extends FrameGenerik {
     private void butScreenActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butScreenActionPerformed
     {//GEN-HEADEREND:event_butScreenActionPerformed
         Fenetre f = new Fenetre();
-                f.setLocation(500, 200);
-                f.setSize(850, 400);
-                
-                f.setVisible(true);
+             
                 this.setVisible(false);
     }//GEN-LAST:event_butScreenActionPerformed
 
     private void butBatchLActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butBatchLActionPerformed
     {//GEN-HEADEREND:event_butBatchLActionPerformed
        FenBatchLangue f = new FenBatchLangue();
-        f.setLocation(500, 200);
-                f.setSize(850, 400);
-                f.setVisible(true);
+        
                 this.dispose();
        
     }//GEN-LAST:event_butBatchLActionPerformed
@@ -146,18 +148,13 @@ public class FenAccueil extends FrameGenerik {
     {//GEN-HEADEREND:event_butModeEmploiActionPerformed
       
         FenModeEmploi fme = new FenModeEmploi();
-     //  fme.setLocation(500, 200);
-                fme.setSize(850, 400);
-                fme.setVisible(true);
-       
+   
     }//GEN-LAST:event_butModeEmploiActionPerformed
 
     private void butSettingsActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butSettingsActionPerformed
     {//GEN-HEADEREND:event_butSettingsActionPerformed
         FenSettings fs = new FenSettings();
-       //fs.setLocation(500, 200);
-               // fs.setSize(850, 400);
-              //  fs.setVisible(true);
+       
        
     }//GEN-LAST:event_butSettingsActionPerformed
 
