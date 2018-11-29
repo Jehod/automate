@@ -39,7 +39,8 @@ public class Params
         langRef = XmlTools.getValueFromDoc(docParams, "langRef");
         pathMeta = XmlTools.getValueFromDoc(docParams, "pathMeta");
         docRef = XmlTools.convertFileToDoc(pathLabel + "Label_" + langRef + ".xml");
-        XmlTools.changeValueOnAttribute(docParams, "langRef", "EN_UK");
+       // XmlTools.changeValueOnAttribute(docParams, "langRef", "EN_US");
+       //XmlTools.addToParams(docParams, "testMethod", "testForm");
 
         //matchMethod = XmlTools.docToMapMethod(docParams);
     }
@@ -117,6 +118,22 @@ public class Params
     public static void setDocRef(Document docRef)
     {
         Params.docRef = docRef;
+    }
+
+    public static String getPathXmlLabel() {
+        return pathXmlLabel;
+    }
+
+    public static void setPathXmlLabel(String pathXmlLabel) {
+        Params.pathXmlLabel = pathXmlLabel;
+    }
+
+    public static String getPathMeta() {
+        return pathMeta;
+    }
+
+    public static void setPathMeta(String pathMeta) {
+        Params.pathMeta = pathMeta;
     }
 
 }
