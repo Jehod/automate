@@ -16,6 +16,7 @@ public class FrameGenerik extends javax.swing.JFrame {
      */
     public FrameGenerik() {
         initComponents();
+        this.getContentPane().setBackground(params.ColorChart.colorBack);
     }
 
     /**

@@ -11,7 +11,7 @@ import params.Params;
  *
  * @author nik
  */
-public class FenSettings extends javax.swing.JFrame
+public class FenSettings extends FrameGenerik
 {
 
     /**

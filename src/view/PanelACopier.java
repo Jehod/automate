@@ -9,7 +9,7 @@ package view;
  *
  * @author nik
  */
-public class PanelACopier extends javax.swing.JFrame
+public class PanelACopier extends FrameGenerik
 {
 
     /**

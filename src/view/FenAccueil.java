@@ -9,7 +9,7 @@ package view;
  *
  * @author nrochas
  */
-public class FenAccueil extends javax.swing.JFrame {
+public class FenAccueil extends FrameGenerik {
 
     /**
      * Creates new form FenAccueil
@@ -18,6 +18,7 @@ public class FenAccueil extends javax.swing.JFrame {
         {
         
         initComponents();
+        this.getContentPane().setBackground(params.ColorChart.colorBack);
         }
 
     /**
@@ -27,56 +28,50 @@ public class FenAccueil extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         labTitre = new javax.swing.JLabel();
         panelButton = new javax.swing.JPanel();
-        butBatchL = new javax.swing.JButton();
-        butSettings = new javax.swing.JButton();
-        butScreen = new javax.swing.JButton();
-        butModeEmploi = new javax.swing.JButton();
+        butBatchL = new ButtonGenerik();
+        butSettings = new ButtonGenerik();
+        butScreen = new ButtonGenerik();
+        butModeEmploi = new ButtonGenerik();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Accueil");
 
         labTitre.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         labTitre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labTitre.setText("Automate d'Aide au Parametrage");
 
+        panelButton.setOpaque(false);
+
         butBatchL.setText("Aide BatchLangue");
         butBatchL.setEnabled(false);
-        butBatchL.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        butBatchL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butBatchLActionPerformed(evt);
             }
         });
 
         butSettings.setText("Settings");
-        butSettings.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        butSettings.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butSettingsActionPerformed(evt);
             }
         });
 
         butScreen.setText("Aide Screenshot");
-        butScreen.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        butScreen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butScreenActionPerformed(evt);
             }
         });
 
         butModeEmploi.setText("Mode d'Emploi");
         butModeEmploi.setToolTipText("");
-        butModeEmploi.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        butModeEmploi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butModeEmploiActionPerformed(evt);
             }
         });
@@ -132,6 +127,7 @@ public class FenAccueil extends javax.swing.JFrame {
         Fenetre f = new Fenetre();
                 f.setLocation(500, 200);
                 f.setSize(850, 400);
+                
                 f.setVisible(true);
                 this.setVisible(false);
     }//GEN-LAST:event_butScreenActionPerformed

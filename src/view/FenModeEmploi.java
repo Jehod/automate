@@ -5,13 +5,11 @@
  */
 package view;
 
-import Outils.XmlTools;
-
 /**
  *
  * @author nik
  */
-public class FenModeEmploi extends javax.swing.JFrame
+public class FenModeEmploi extends FrameGenerik
 {
 
     /**
@@ -20,6 +18,7 @@ public class FenModeEmploi extends javax.swing.JFrame
     public FenModeEmploi()
     {
         initComponents();
+        
         
     }
 
