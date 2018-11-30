@@ -1,0 +1,11 @@
+todo pour l'automate:
+
+-indentation lors de la creation de la mapmethod
+-verifier que la charte graphiques est appliqué de partout
+-verifier l'heritage du button
+-heriter les list et les scroller?
+- finir de mettre le logger partout. le passer en txt form a la place du xml?
+-mettre la detection et la resolution des cas particuliers de mapping formDef 
+- partir des questionnaires et ajouter la possibilité de creer une entrée mapMethod manuellement
+- mettre la detection automatique des mapMethod vides et/ou detruire le  noREf no method a la generation du map method  
+
