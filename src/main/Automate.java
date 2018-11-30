@@ -5,6 +5,7 @@
  */
 package main;
 
+import org.apache.log4j.Priority;
 import view.FenAccueil;
 import view.Fenetre;
 import view.FrameGenerik;
@@ -26,15 +27,14 @@ public class Automate
         {
             public void run()
             {
+                Outils.Loggeur.logMessage("Ouverture du log", Priority.DEBUG_INT);
                 params.Params.getInstance();
                 params.ColorChart.getInstance();
                 
                
 
                FenAccueil fa = new FenAccueil();
-                //fa.setLocation(500, 200);
-                //fa.setSize(400, 400);
-                //fa.setVisible(true);
+               
             }
         });
     }
