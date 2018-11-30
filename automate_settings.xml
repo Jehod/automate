@@ -1,26 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <params>
-	<langRef langRef="EN_US"/>
-	<pathLabel pathLabel="Labels/"/>
-	<pathXml pathXml="Labels/"/>
-     <pathMeta pathMeta="Metadata/"/>
+	<langRef langRef="EN_UK"/>
+	<pathLabel pathLabel="Label/"/>
+	<pathXml pathXml=""/>
 	<MapMethod method="noMethod" formulaire="noForm"/>
-	<MapMethod method="FDEF.1_DLQI" formulaire="DLQI"/>
-	<MapMethod method="FDEF.5_WPAIHS" formulaire="WPAIHS"/>
-	<MapMethod method="FDEF.4_PGIC" formulaire="PGIC"/>
-	<MapMethod method="FDEF.3_PGIS" formulaire="PGIS"/>
-	<MapMethod method="FDEF.2_EQ5D3L" formulaire="EQ5D3L"/>
-	<MapMethod method="FDEF.1_UNS_DLQI" formulaire="DLQI"/>
-	<MapMethod method="FDEF.5_UNS_WPAIHS" formulaire="WPAIHS"/>
-	<MapMethod method="FDEF.3_UNS_PGIC" formulaire="PGIC"/>
-	<MapMethod method="FDEF.4_UNS_PGIS" formulaire="PGIS"/>
-	<MapMethod method="FDEF.2_UNS_EQ5D3L" formulaire="EQ5D3L"/>
-	<MapMethod method="FDEF.8_LESIONCOUNT" formulaire="LESIONCOUNT"/>
-	<MapMethod method="FDEF.6_DAY01_MEDLOG" formulaire="MEDLOG"/>
-	<MapMethod method="FDEF.6_DAY02_MEDLOG" formulaire="MEDLOG"/>
-	<MapMethod method="FDEF.6_DAY03_MEDLOG" formulaire="MEDLOG"/>
-	<MapMethod method="FDEF.6_DAY04_MEDLOG" formulaire="MEDLOG"/>
-	<MapMethod method="FDEF.6_DAY05_MEDLOG" formulaire="MEDLOG"/>
-	<MapMethod method="FDEF.6_DAY06_MEDLOG" formulaire="MEDLOG"/>
-	<MapMethod method="FDEF.6_DAY07_MEDLOG" formulaire="MEDLOG"/>
+
 </params>
