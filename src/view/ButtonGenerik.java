@@ -13,24 +13,15 @@ import javax.swing.JButton;
  *
  * @author nrochas
  */
-public class ButtonGenerik extends JButton{
-    
+public class ButtonGenerik extends JButton
+{
 
-    
-
-    @Override
-    public void setForeground(Color fg) {
-        super.setForeground(params.ColorChart.colorFont); //To change body of generated methods, choose Tools | Templates.
+    public ButtonGenerik()
+    {
+        super.setSize(140, 25);
+        super.setForeground(params.ColorChart.colorFont);
+        super.setFont(params.ColorChart.fontButton);
+        super.setToolTipText("Ceci est un Bouton et cliquer dessus produira un effet (sans doute)");
     }
 
-    @Override
-    public void setFont(Font font) {
-        super.setFont(params.ColorChart.fontButton); //To change body of generated methods, choose Tools | Templates.
-    }
-    @Override
-    public void setToolTipText(String text) {
-        super.setToolTipText("Ceci est un Bouton et cliquer dessus produira un effet (sans doute)"); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
 }

@@ -7,19 +7,18 @@ package view;
 
 import automate.EcrivainScreenShot;
 import automate.MethodMatcher;
-import java.awt.Color;
-import javax.swing.JOptionPane;
-import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import modele.ListModelFDEF;
 import modele.ListModelLangEnt;
 import modele.ListModelLangExt;
 import modele.ListModelMethExt;
+import params.ColorChart;
+import static params.ColorChart.fontCorps;
 
 /**
  *
  * @author nik
  */
-public class Fenetre extends javax.swing.JFrame {
+public class Fenetre extends FrameGenerik {
 
     EcrivainScreenShot ecr = new EcrivainScreenShot();
     MethodMatcher mm = new MethodMatcher();
@@ -32,7 +31,7 @@ public class Fenetre extends javax.swing.JFrame {
        
         
         initComponents();
-        this.getContentPane().setBackground(params.ColorChart.colorBack);
+        
        
 
         }
@@ -44,7 +43,8 @@ public class Fenetre extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         butFin = new javax.swing.JButton();
         butCancel = new javax.swing.JButton();
@@ -68,21 +68,24 @@ public class Fenetre extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Scripteur pour ScreenShots\n");
-        setBackground(new java.awt.Color(255, 102, 102));
-        setForeground(new java.awt.Color(51, 255, 255));
+        setFont(new java.awt.Font("Tekton Pro Ext", 0, 12)); // NOI18N
 
         butFin.setText("Ajuster");
         butFin.setToolTipText("permet de faire le mapping entre les FormDef et les formulaires");
-        butFin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        butFin.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 butFinActionPerformed(evt);
             }
         });
 
         butCancel.setText("cancel");
         butCancel.setEnabled(false);
-        butCancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        butCancel.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 butCancelActionPerformed(evt);
             }
         });
@@ -99,7 +102,7 @@ public class Fenetre extends javax.swing.JFrame {
         jLabel1.setToolTipText("sous forme (FDEF.3_EQ5D5L)");
 
         listLangEnSP.setBackground(params.ColorChart.colorFront);
-        listLangEnSP.setBorder(javax.swing.BorderFactory.createTitledBorder("Codes in Study"));
+        listLangEnSP.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Codes in Study", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, params.ColorChart.fontCorps));
         listLangEnSP.setAutoscrolls(true);
         listLangEnSP.setDoubleBuffered(true);
         listLangEnSP.setHorizontalScrollBar(null);
@@ -113,7 +116,7 @@ public class Fenetre extends javax.swing.JFrame {
         listLangEnSP.setViewportView(listLangEntJL);
 
         listLangExSP.setBackground(params.ColorChart.colorFront);
-        listLangExSP.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Codes to ScreenShot", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 9))); // NOI18N
+        listLangExSP.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Codes to ScreenShot", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, ColorChart.fontCorpsReduit));
 
         listLangExtJL.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         listLangExtJL.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
@@ -121,22 +124,26 @@ public class Fenetre extends javax.swing.JFrame {
         listLangExSP.setViewportView(listLangExtJL);
 
         butEnvoi.setText(">");
-        butEnvoi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        butEnvoi.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 butEnvoiActionPerformed(evt);
             }
         });
 
         butRetrait.setText("<");
         butRetrait.setToolTipText("");
-        butRetrait.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        butRetrait.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 butRetraitActionPerformed(evt);
             }
         });
 
         listMethEn.setBackground(params.ColorChart.colorFront);
-        listMethEn.setBorder(javax.swing.BorderFactory.createTitledBorder("Method in Study"));
+        listMethEn.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Method in Study", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, params.ColorChart.fontCorps));
 
         listModelFDEF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         listModelFDEF.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
@@ -144,7 +151,7 @@ public class Fenetre extends javax.swing.JFrame {
         listMethEn.setViewportView(listModelFDEF);
 
         listMethEx.setBackground(params.ColorChart.colorFront);
-        listMethEx.setBorder(javax.swing.BorderFactory.createTitledBorder("Method to screenshot"));
+        listMethEx.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Method to screenshot", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, params.ColorChart.fontCorpsReduit));
 
         listMethExt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         listMethExt.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
@@ -152,24 +159,30 @@ public class Fenetre extends javax.swing.JFrame {
         listMethEx.setViewportView(listMethExt);
 
         butEnvoiMethod.setText(">");
-        butEnvoiMethod.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        butEnvoiMethod.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 butEnvoiMethodActionPerformed(evt);
             }
         });
 
         butRetraitMethod.setText("<");
         butRetraitMethod.setToolTipText("");
-        butRetraitMethod.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        butRetraitMethod.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 butRetraitMethodActionPerformed(evt);
             }
         });
 
         butScript.setText("Lancer le script");
         butScript.setToolTipText("Synchroniser d'abord les methodes pour activer ce bouton");
-        butScript.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        butScript.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 butScriptActionPerformed(evt);
             }
         });

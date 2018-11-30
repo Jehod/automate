@@ -5,18 +5,32 @@
  */
 package view;
 
+import java.awt.Dimension;
+
 /**
  *
  * @author nrochas
  */
-public class FrameGenerik extends javax.swing.JFrame {
+public class FrameGenerik extends javax.swing.JFrame
+{
 
     /**
      * Creates new form FrameGenerik
      */
-    public FrameGenerik() {
+    public FrameGenerik()
+    {
+
+        Dimension dim = this.getToolkit().getScreenSize();
+        
+       
         initComponents();
+        
+        this.setFont(params.ColorChart.fontCorps);
+        this.setLocation(dim.width/2 - this.getWidth()/2, dim.height/2 - this.getHeight()/2);
+        this.setSize(850, 400);
         this.getContentPane().setBackground(params.ColorChart.colorBack);
+        this.getContentPane().setForeground(params.ColorChart.colorFront);
+        this.setVisible(true);
     }
 
     /**
@@ -26,9 +40,11 @@ public class FrameGenerik extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setLocation(new java.awt.Point(0, 0));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -44,15 +60,8 @@ public class FrameGenerik extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-   
-      
-     
-           
-    
+}
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
-}

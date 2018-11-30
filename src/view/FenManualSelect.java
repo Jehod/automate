@@ -18,7 +18,7 @@ import params.Params;
  *
  * @author nrochas
  */
-public class FenManualSelect extends javax.swing.JFrame {
+public class FenManualSelect extends FrameGenerik {
 
     /**
      * Creates new form ManualSelect

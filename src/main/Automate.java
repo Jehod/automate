@@ -7,6 +7,7 @@ package main;
 
 import view.FenAccueil;
 import view.Fenetre;
+import view.FrameGenerik;
 
 /**
  *
@@ -26,11 +27,14 @@ public class Automate
             public void run()
             {
                 params.Params.getInstance();
+                params.ColorChart.getInstance();
+                
+               
 
-                FenAccueil fa = new FenAccueil();
-                fa.setLocation(500, 200);
-                fa.setSize(400, 400);
-                fa.setVisible(true);
+               FenAccueil fa = new FenAccueil();
+                //fa.setLocation(500, 200);
+                //fa.setSize(400, 400);
+                //fa.setVisible(true);
             }
         });
     }
