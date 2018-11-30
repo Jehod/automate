@@ -5,8 +5,11 @@
  */
 package params;
 
+import Outils.Loggeur;
 import Outils.XmlTools;
 import java.io.File;
+import org.apache.log4j.Logger;
+import org.apache.log4j.Priority;
 import org.dom4j.Document;
 import org.dom4j.Element;
 
@@ -16,6 +19,7 @@ import org.dom4j.Element;
  */
 public class Params
 {
+    private static Logger logger = Logger.getLogger(Loggeur.class);
 
     private final String pathParams = "automate_settings.xml";
     
@@ -40,6 +44,10 @@ public class Params
        //XmlTools.addToParams(docParams, "testMethod", "testForm");
 
         //matchMethod = XmlTools.docToMapMethod(docParams);
+        logger.info("initialisation des Settings");
+        
+      
+        
     }
 
     public static Params getInstance()
@@ -71,7 +79,10 @@ public class Params
         if (Outils.FilesWorker.editFiles(init, new File("automate_settings.xml")))
         {
             docParams = XmlTools.convertFileToDoc(pathParams);
-        }else{System.out.println("un probleme mec");};
+        }else{
+            logger.error(" la creation du XML de params a eu un probleme");
+            
+        };
 
     }
 
