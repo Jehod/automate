@@ -6,14 +6,13 @@
 package Outils;
 
 import entity.DocLang;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import org.apache.log4j.Logger;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -26,8 +25,10 @@ import params.Params;
  *
  * @author nrochas
  */
-public class XmlTools
+public class XmlTools     
 {
+    
+    private static Logger logger = Logger.getLogger(Loggeur.class);
 
     public XmlTools()
     {
@@ -52,6 +53,7 @@ public class XmlTools
         } catch (DocumentException ex)
         {
             System.out.println("+++++++++catch du convertfiletodoc " + ex.getMessage());
+            logger.error("+++++++++catch du convertfiletodoc " + ex.getMessage());
             
 
         } finally
@@ -60,6 +62,7 @@ public class XmlTools
             if (doc != null)
             {
                 System.out.println("reussite de la conversion de : " + file);
+                logger.info("reussite de la conversion de : " + file);
             }
         }
         return doc;
@@ -89,6 +92,7 @@ public class XmlTools
         }
 
         System.out.println("liste de la ref:" + list.toString());
+        logger.debug("liste de la ref:" + list.toString());
         return list;
 
     }
@@ -108,6 +112,7 @@ public class XmlTools
         elem.addAttribute("method", method);
         elem.addAttribute("formulaire", form);
         System.out.println("element is " + elem.toString() + "le fichier est: "+doc.getName());
+        logger.debug("element is " + elem.toString() + "le fichier est: "+doc.getName());
         writerFile(doc, doc.getName());
         
         
@@ -178,21 +183,23 @@ public class XmlTools
 
                     String quest = split1[0].substring(0, split1[0].length() - 6);
 
-                    System.out.println("+++++++++le doclang serait:" + version + " " + codeIso + " " + quest);
 
                     if (/*version.matches(regVersion) &&*/!quest.equals("PARAM") && !quest.equals("PFT") && codeIso.equals(lang))
                     {
                         list.add(new DocLang(codeIso, quest, version));
                         System.out.println("creation docLang reussi");
+                        logger.info("creatin doclang " + codeIso+" q. "+quest+" v. "+version+" reussi");
 
                     } else if (quest.equals("PARAM") && quest.equals("PFT"))
                     {
                         System.out.println("Pas de creation de PFT ou de PARAM");
+                        logger.info("Pas de creation de PFT ou de PARAM");
 
                     } else
                     {
                         list.add(new DocLang(codeIso, "NoRef", "NoRef"));
                         System.out.println("creation DocLang raté");
+                        logger.error("creatin doclang " + codeIso+" q. "+quest+" v. "+version+" raté");
                     }
                 }
                 j++;
@@ -227,6 +234,7 @@ public class XmlTools
                 {
                     Element element2 = (Element) elementIterator2.next();
                     System.out.println("trace niv1++" + element2.attributeValue("OID"));
+                    logger.debug("trace niv1++" + element2.attributeValue("OID"));
                     list.add(element2.attributeValue("OID"));
                 }
             }
@@ -266,6 +274,7 @@ public class XmlTools
         }
 
         System.out.println("changement de "+attribut+" valeur "+value+" en " + newValue +" dans le Doc "+doc.getName());  
+        logger.info("changement de "+attribut+" valeur "+value+" en " + newValue +" dans le Doc "+doc.getName());
         writerFile(doc, doc.getName());
 
         }
@@ -325,6 +334,7 @@ public class XmlTools
         ArrayList<ArrayList<DocLang>> listDocLang = new ArrayList<>();
         Document doc;
         System.out.println("trace avant la boucler et la size de listlang:" + listLang.size());
+        logger.debug("trace avant la boucler et la size de listlang:" + listLang.size());
         for (String lang : listLang)
         {
             doc = convertFileToDoc(Params.pathLabel + "Label_" + lang + ".xml");
@@ -348,6 +358,7 @@ public class XmlTools
         } catch (IOException ex)
         {
             System.out.println("+++++++++++catch de writerFile" + ex.getMessage());
+            logger.fatal("+++++++++++catch de writerFile" + ex.getMessage());
         } finally
         {
             try
@@ -356,6 +367,7 @@ public class XmlTools
             } catch (IOException ex)
             {
                 System.out.println("+++++++++++catch de writerFile close" + ex.getMessage());
+                logger.fatal("+++++++++++catch de writerFile close" + ex.getMessage());
             }
         }
     }
@@ -372,6 +384,7 @@ public class XmlTools
         } catch (IOException e)
         {
             System.out.println("++++writeXMLIndented++++" + e.getMessage());
+            logger.fatal( "++++writeXMLIndented++++" + e.getMessage());
         }
     }
 
@@ -398,6 +411,7 @@ public class XmlTools
         }
 
         System.out.println("liste de la ref "+attribut+": " + value);
+        logger.debug("liste de la ref "+attribut+": " + value);
         return value;
 
     }
